@@ -28,7 +28,7 @@ def Heff(J,p1,p2,K1,K2,epsilon):
 	Omega=2*np.pi			#Frequency of the Potential (=2*PI/T (T=1) )
 	H0=KineticEnergy(p1,p2,J)	#Kinetic Energy Operator
 	V=Potential(K1,K2,J,epsilon)	#Fourier Coefficients of the Potential Operator
-	Hprime= Comm(Comm(V,H0),V)
+	Hprime= Comm(Comm(V,H0),V) #The Commutator Causes some really weird problems at high J
 	Hprime=Hprime+Dagger(Hprime)
 	Hamilt=H0+V+1/(2*Omega*Omega)*((np.pi)**2)/6*Hprime #H_eff for a Coupled Kicked Rotor System approximated upto an accuracy of (1/W*W)
 	return Hamilt
