@@ -41,7 +41,7 @@ def Floquet(J,p1,p2,K1,K2,epsilon):
 	J1=(Jz+0.5*Identity)
 	J_sq=J1*J1
 
-	JyEigenvalues, JyBasis_inv = eig(Jy)
+	JyEigenvalues, JyBasis_inv = eigh(Jy)
 	JyBasis = Dagger(JyBasis_inv)
 	Jy_prime=JyBasis_inv*Jy*JyBasis
 
