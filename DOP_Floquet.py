@@ -7,7 +7,7 @@ from DOP_Heff import *
 import matplotlib.pyplot as plt
 
 def Floquet(J,p1,p2,K1,K2,epsilon):
-	pass
+
 	im = cmath.sqrt(-1)	
 
 	#J=10.0
@@ -25,10 +25,12 @@ def Floquet(J,p1,p2,K1,K2,epsilon):
  
 #To calculate the representation of Jy using ladder operators
 	for index in range(N-1):
-    		Jy[index+1][index] = -np.sqrt((J+m_arr[index])*(J-m_arr[index]+1))
+		Jy[index+1][index] = -np.sqrt((J+m_arr[index])*(J-m_arr[index]+1))
     	Jy[index][index+1] = np.sqrt((J-m_arr[index+1])*(J+m_arr[index+1]+1))
 	Jy = np.matrix(Jy)
 	Jy=(-0.5*im)*Jy
+
+
 #To calculate the representation of Jz
 	Jz=[[0 for x in range(N)] for y in range(N)]
 	for x in range(N):
