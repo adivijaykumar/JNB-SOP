@@ -9,11 +9,11 @@ im = cmath.sqrt(-1)
 J= 10.0	
 p1=1/J
 p2=1/J
-K1=1.0
-K2=1.0
+K1=10.0
+K2=15.0
 T=1.0
 
-for epsilon in [0.0001,0.001,0.01,0.1,1.0]:#,2.0,5.0,10.0,50.0,100.0,500.0,1000.0,10000.0]:
+for epsilon in [0.0]:#,2.0,5.0,10.0,50.0,100.0,500.0,1000.0,10000.0]:
 	N=int(2*J+1)
 	N_sq=int(N*N)
 	
@@ -85,12 +85,10 @@ for epsilon in [0.0001,0.001,0.01,0.1,1.0]:#,2.0,5.0,10.0,50.0,100.0,500.0,1000.
 	plt.plot(Sv_array2,'ro',label='From Floquet')
 	plt.plot(Sv_array3,'go',label='From Brillouin')
 	plt.legend()
-	plt.savefig('epsilon_%s.png'%epsilon)
+	plt.savefig('2_epsilon_%s.png'%epsilon)
 	plt.close()
 	
 	print 'epsilon %s done' %epsilon
-
-
 
 
 	#plt.show()
